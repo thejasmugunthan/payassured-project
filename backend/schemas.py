@@ -2,7 +2,7 @@ from pydantic import BaseModel, EmailStr
 from datetime import date
 from typing import Optional
 
-#CLIENT SCHEMAS
+#git remote add originCLIENT SCHEMAS
 
 class ClientCreate(BaseModel):
     client_name: str
