@@ -89,34 +89,34 @@ This project demonstrates:
 ## 📁 Project Structure
 
 PayAssured/
-│
-├── frontend/
-│ ├── src/
-│ │ ├── pages/
-│ │ │ ├── ClientCreate.js
-│ │ │ ├── CaseCreate.js
-│ │ │ ├── CaseList.js
-│ │ │ └── CaseDetail.js
-│ │ ├── api.js
-│ │ ├── styles.css
-│ │ └── App.js
-│
-├── backend/
-│ ├── app.py
-│ ├── models.py
-│ ├── schemas.py
-│ ├── database.py
-│ └── .env.example
-│
-├── db/
-│ └── schema.sql
-│
-├── screenshots/
-│ ├── case-list.png
-│ ├── case-detail.png
-│ └── case-create.png
-│
-└── README.md
+- frontend/
+  - src/
+    - pages/
+      - ClientCreate.js
+      - CaseCreate.js
+      - CaseList.js
+      - CaseDetail.js
+    - api.js
+    - styles.css
+    - App.js
+
+- backend/
+  - app.py
+  - models.py
+  - schemas.py
+  - database.py
+  - .env.example
+
+- db/
+  - schema.sql
+
+- screenshots/
+  - case-list.png
+  - case-detail.png
+  - case-create.png
+
+- README.md
+
 
 
 ---
