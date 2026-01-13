@@ -1,230 +1,167 @@
-📊 PayAssured – Invoice Recovery Case Tracker
+# 📊 PayAssured – Invoice Recovery Case Tracker
 
-This project is a mini internal CRM built to simulate how PayAssured manages invoice recovery operations for Indian businesses.
-It allows internal teams to manage clients, track unpaid invoices, and monitor recovery progress from a single dashboard.
+PayAssured – Invoice Recovery Case Tracker is a mini internal CRM application that simulates how PayAssured manages invoice recovery operations for Indian businesses.
 
-The application reflects the kind of real-world internal tools used by PayAssured’s tele-calling, DRS, and legal operations teams.
+The system allows internal teams to manage clients, track unpaid invoices, and monitor recovery progress from a single dashboard—similar to tools used by tele-calling, DRS, and legal operations teams in real-world organizations.
 
-🎯 Purpose of the Project
+---
 
-The goal of this assignment is to demonstrate:
+## 🎯 Project Objective
 
-Understanding of real business requirements
+This project demonstrates:
 
-Ability to design a relational database
+- Understanding of real-world business requirements  
+- Relational database design  
+- Clean REST API development using FastAPI  
+- Interactive frontend development using React  
+- End-to-end full-stack integration  
+- Writing maintainable, production-style code  
+- Easy local setup for developers  
 
-Clean API design using Python (FastAPI)
+---
 
-Building an interactive frontend using Node.js (React)
+## 🧩 Features
 
-End-to-end full-stack integration
+### Client Management
+- Add new clients with complete details  
+- View all registered clients  
+- Email enforced as unique  
+- Strong API validation using Pydantic  
 
-Writing maintainable, production-style code
+**Client Fields**
+- Client Name  
+- Company Name  
+- City  
+- Contact Person  
+- Phone  
+- Email  
 
-Making the project easy for another developer to run locally
+---
 
-🧩 Features Implemented
-1️⃣ Client Management
+### Invoice Recovery Case Management
+- Create invoice recovery cases linked to clients  
+- Track invoice and due dates  
+- View all recovery cases in a table  
+- Filter cases by status  
+- View case details  
+- Update recovery status and follow-up notes  
 
-Add new clients with complete details
+**Case Fields**
+- Client (Foreign Key)  
+- Invoice Number  
+- Invoice Amount  
+- Invoice Date  
+- Due Date  
+- Status (New, In Follow-up, Partially Paid, Closed)  
+- Last Follow-up Notes  
 
-View all registered clients
+---
 
-Email is enforced as unique
+### Dashboard Experience
+- Central dashboard for all cases  
+- Client name visible in case list  
+- Status badges for quick identification  
+- Clean and minimal UI for internal users  
 
-Clean API validation using Pydantic
+---
 
-Client Fields
+## 🛠️ Tech Stack
 
-Client Name
+### Frontend
+- React (Node.js)
+- Axios
+- React Router
+- Plain CSS
 
-Company Name
+### Backend
+- Python – FastAPI
+- SQLAlchemy ORM
+- Pydantic
+- RESTful APIs
 
-City
+### Database
+- MySQL
+- Foreign key relationships
+- Data integrity constraints
 
-Contact Person
+---
 
-Phone
+## 📁 Project Structure
 
-Email
-
-2️⃣ Invoice Recovery Case Management
-
-Create invoice recovery cases linked to a client
-
-Automatically track invoice and due dates
-
-View all recovery cases in a tabular format
-
-Filter cases by status
-
-View case details
-
-Update recovery status and follow-up notes
-
-Case Fields
-
-Client (linked via foreign key)
-
-Invoice Number
-
-Invoice Amount
-
-Invoice Date
-
-Due Date
-
-Status (New, In Follow-up, Partially Paid, Closed)
-
-Last Follow-up Notes
-
-3️⃣ Dashboard Experience
-
-Single dashboard to view all cases
-
-Client name visible in case list
-
-Status badges for quick visual understanding
-
-Clean and minimal UI for internal usage
-
-🛠️ Tech Stack
-Frontend
-
-React (Node.js)
-Axios for API communication
-React Router for navigation
-Plain CSS for clean UI styling
-
-Backend
-Python – FastAPI
-SQLAlchemy ORM
-Pydantic for validation
-RESTful API design
-Database
-MySQL
-Proper foreign key relationships
-Constraints for data integrity
-
-📁 Project Structure
 PayAssured/
 │
 ├── frontend/
-│   ├── src/
-│   │   ├── pages/
-│   │   │   ├── ClientCreate.js
-│   │   │   ├── CaseCreate.js
-│   │   │   ├── CaseList.js
-│   │   │   └── CaseDetail.js
-│   │   ├── api.js
-│   │   ├── styles.css
-│   │   └── App.js
+│ ├── src/
+│ │ ├── pages/
+│ │ │ ├── ClientCreate.js
+│ │ │ ├── CaseCreate.js
+│ │ │ ├── CaseList.js
+│ │ │ └── CaseDetail.js
+│ │ ├── api.js
+│ │ ├── styles.css
+│ │ └── App.js
 │
 ├── backend/
-│   ├── app.py
-│   ├── models.py
-│   ├── schemas.py
-│   ├── database.py
-│   └── .env.example
+│ ├── app.py
+│ ├── models.py
+│ ├── schemas.py
+│ ├── database.py
+│ └── .env.example
 │
 ├── db/
-│   └── schema.sql
+│ └── schema.sql
 │
 ├── screenshots/
-│   ├── case-list.png
-│   ├── case-detail.png
-│   └── case-create.png
+│ ├── case-list.png
+│ ├── case-detail.png
+│ └── case-create.png
 │
 └── README.md
 
 
-⚙️ Setup Instructions
+---
+
+## ⚙️ Setup Instructions
 
 1️⃣ Clone the Repository
-git clone <your-repo-url>
-cd PayAssured
+    git clone <your-repository-url>
+    cd PayAssured
 
 2️⃣ Database Setup (MySQL)
-
-Create the database:
-
-CREATE DATABASE payassured;
-
-
-Run the schema file:
-
-mysql -u root -p payassured < db/schema.sql
+    Create database:
+    CREATE DATABASE payassured;
+    Run schema:
+    mysql -u root -p payassured < db/schema.sql
 
 3️⃣ Backend Setup (FastAPI)
-
-Navigate to backend folder:
-
-cd backend
-
-
-Create virtual environment:
-
-python -m venv venv
-venv\Scripts\activate
-
-
-Install dependencies:
-
-pip install fastapi uvicorn sqlalchemy pymysql python-dotenv
-
-
-Create .env file:
-
-DB_USER=root
-DB_PASSWORD=your_mysql_password
-DB_HOST=localhost
-DB_NAME=payassured
-
-
-Start backend server:
-
-uvicorn app:app --reload
-
-
-Backend runs at:
-
-http://127.0.0.1:8000
+    cd backend
+    python -m venv venv
+    venv\Scripts\activate
+    pip install fastapi uvicorn sqlalchemy pymysql python-dotenv
+    uvicorn app:app --reload
+    Backend runs at:
+    http://127.0.0.1:8000
 
 4️⃣ Frontend Setup (React)
+    cd frontend
+    npm install
+    npm start
+    Frontend runs at:
+    http://localhost:3000
 
-Navigate to frontend:
-
-cd frontend
-
-
-Install dependencies:
-
-npm install
-
-
-Start React app:
-
-npm start
-
-
-Frontend runs at:
-
-http://localhost:3000
 
 🔗 API Endpoints
-Client APIs
+    Client APIs
+    POST /clients – Create client
 
-POST /clients – Create client
+    GET /clients – List clients
 
-GET /clients – List clients
+    Case APIs
+    POST /cases – Create case
 
-Case APIs
+    GET /cases – List cases
 
-POST /cases – Create case
+    GET /cases/{id} – Case detail
 
-GET /cases – List cases (with filters)
-
-GET /cases/{id} – Case detail
-
-PATCH /cases/{id} – Update status & notes
+    PATCH /cases/{id} – Update status & notes
 
