@@ -151,6 +151,7 @@ PayAssured/
 
 
 🔗 API Endpoints
+
     Client APIs
     POST /clients – Create client
 
